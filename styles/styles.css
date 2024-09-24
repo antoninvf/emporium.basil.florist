@@ -125,6 +125,10 @@ h1 {
   width: 25%;
 }
 
+#underText {
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
   html {
     background-image: url(/fuckyou.png);

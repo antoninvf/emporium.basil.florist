@@ -1,4 +1,4 @@
-// Fills a <tbody> with an id downloadList with download links from cdn.gangnamstyle.dev/chutoy/mc
+// Fills a <tbody> with an id downloadList with download links from files.flwn.dev/chutoy/mc
 
 // Get the <tbody> element
 var downloadList = document.getElementById("downloadList");
@@ -26,7 +26,7 @@ $('#versionSelect').on('select2:select', function (e) {
 
 // wait for 0.5 seconds before fetching the download links
 
-fetch("https://api.gangnamstyle.dev/chutoyemporium/mcdownloads/versions")
+fetch("https://api.flwn.dev/chutoyemporium/mc/versions")
     .then(response => response.json()).catch(error => {
         selectors.remove();
     })
@@ -38,14 +38,13 @@ fetch("https://api.gangnamstyle.dev/chutoyemporium/mcdownloads/versions")
     });
 
 window.onload = GetDownloads("");
-// Fetch the download links from rest api https://api.gangnamstyle.dev/chutoyemporium/mcdownloads
+// Fetch the download links from rest api https://api.flwn.dev/chutoyemporium/mcdownloads
 function GetDownloads(v) {
-    fetch("https://api.gangnamstyle.dev/chutoyemporium/mcdownloads" + v)
+    fetch("https://api.flwn.dev/chutoyemporium/mc" + v)
         .then(response => response.json()).catch(error => {
-            console.log(error);
             pleaseWait.innerText = "Something went wrong, please try again later.";
             loadingGif.setAttribute("src", "https://media.tenor.com/w4zAod6JGj8AAAAC/yakuza-kiryu.gif");
-            underText.innerText = "Cannot reach the API";
+            underText.innerText = `Cannot reach the API\n (${error.message})`;
         })
         .then(data => {
             // Sort the data by newest unix timestamp first, and if the name includes OLD, put it at the bottom as well
@@ -65,9 +64,9 @@ function GetDownloads(v) {
 
                 for (var i = 0; i < data.length; i++) {
 
-                    var iconUrl = "https://cdn.gangnamstyle.dev/chutoy/mc/icons/missing.png"
+                    var iconUrl = "https://files.flwn.dev/chutoy/mc/icons/missing.jpg"
                     if (data[i].category.includes("Prism")) {
-                        iconUrl = "https://cdn.gangnamstyle.dev/chutoy/mc/icons/prism.png"
+                        iconUrl = "https://files.flwn.dev/chutoy/mc/icons/prism.png"
                     }
 
                     var buttonStyle = "btn-primary";
