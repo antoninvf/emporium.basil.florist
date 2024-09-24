@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "RepublicGothic";
+  src: url("/fonts/RepublicGothic.ttf");
+}
+@font-face {
+  font-family: "UbuntuMono";
+  src: url("/fonts/UbuntuMono.ttf");
+}
+@font-face {
+  font-family: "OmoriFont";
+  src: url("/fonts/OmoriFont.ttf");
+}
+body {
+  font-family: "UbuntuMono";
+  font-weight: bold;
+  margin: 0;
+}
+
+nav {
+  z-index: 999;
+}
+
+.middle {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to top, rgba(251, 63, 210, 0) 90vh, rgba(230, 61, 216, 0.431372549) 100vh);
+}
+
+.btn {
+  font-family: "UbuntuMono";
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  margin: 0;
+}
+
+.dropShadow {
+  filter: drop-shadow(0 0 0.5vh #000000);
+}
+
+.basil {
+  color: #51e697;
+}
+
+.basil:hover {
+  color: #51e697;
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+.omori {
+  font-family: "OmoriFont";
+  font-weight: bolder;
+}
+
+.omoriBg {
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: -99;
+  width: 100%;
+  height: 100%;
+  content: url("/omoriBg.png");
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.omoriBgDark {
+  content: url("/omoriBgDark.png");
+  filter: brightness(0.3);
+}
+
+h1 {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: cover;
+  background-image: linear-gradient(135deg, #a1005b 20vh, #811aa5 50vh);
+}
+
+.titleText {
+  font-family: "RepublicGothic";
+  font-size: 10vh;
+}
+
+.downloadPickCard {
+  color: initial;
+  width: 18rem;
+  opacity: 1;
+  transition: opacity ease-in-out 0.1s;
+}
+
+.card-title {
+  font-weight: bolder;
+}
+
+.downloadPickCard:hover {
+  color: initial;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity ease-in-out 0.2s;
+}
+
+.downloadRow {
+  padding: 2vh;
+  width: 100%;
+}
+
+.downloadRow:hover {
+  filter: brightness(0.85);
+}
+
+.dropdowns {
+  width: 25%;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    background-image: url(/fuckyou.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: flash 0.1s infinite;
+  }
+  body {
+    display: none;
+  }
+  @keyframes flash {
+    0% {
+      background-color: white;
+    }
+    100% {
+      background-color: black;
+    }
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
